@@ -78,3 +78,9 @@ The frontend deployment requires the separately deployed backend services.
 `.env.example` contains shareable defaults. `.env.local` contains local settings
 and is ignored by Git. Never commit credentials or expose backend secrets using
 `NEXT_PUBLIC_` variables.
+
+## Release checks
+
+GitHub Actions runs lint, type checking and production builds for this repository.
+The Gather favicon is served from `src/app/icon.svg`. After deployment, check
+`/api/v1/health/live` through the frontend to verify the backend proxy.
